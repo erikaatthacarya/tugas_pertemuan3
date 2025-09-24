@@ -29,3 +29,19 @@ void main() {
 
     print("BMI Anda: ${bmi.toStringAsFixed(2)}");
     print("Kategori: $kategori\n");
+
+    history.add("Berat: ${berat}kg, Tinggi: ${tinggiCm}cm, BMI: ${bmi.toStringAsFixed(2)}, Kategori: $kategori");
+
+    stdout.write("Hitung lagi? (y/n): ");
+    lanjut = stdin.readLineSync()!;
+  }
+
+  print("\n=== History Perhitungan BMI ===");
+  if (history.isEmpty) {
+    print("Belum ada perhitungan.");
+  } else {
+    for (int i = 0; i < history.length; i++) {
+      print("${i + 1}. ${history[i]}");
+    }
+  }
+}
