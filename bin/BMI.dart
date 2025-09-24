@@ -14,3 +14,18 @@ void main() {
     double tinggiCm = double.parse(stdin.readLineSync()!);
     double tinggiM = tinggiCm / 100;
     
+    double bmi = berat / (tinggiM * tinggiM);
+
+    String kategori;
+    if (bmi < 18.5) {
+      kategori = "Kurus";
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+      kategori = "Normal";
+    } else if (bmi >= 25 && bmi < 29.9) {
+      kategori = "Gemuk";
+    } else {
+      kategori = "Obesitas";
+    }
+
+    print("BMI Anda: ${bmi.toStringAsFixed(2)}");
+    print("Kategori: $kategori\n");
